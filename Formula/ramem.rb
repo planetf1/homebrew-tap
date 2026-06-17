@@ -1,19 +1,19 @@
 class Ramem < Formula
   desc "Local, offline AI agent memory using LanceDB and MCP — the ram CLI"
   homepage "https://github.com/planetf1/ramem"
-  version "0.1.9"
+  version "0.1.10"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/planetf1/ramem/releases/download/v0.1.9/ramem-aarch64-apple-darwin.tar.xz"
-    sha256 "6aac04531006f7ab3846bfce7a5971d30dc0c231c611f17223405942249f0eac"
+    url "https://github.com/planetf1/ramem/releases/download/v0.1.10/ramem-aarch64-apple-darwin.tar.xz"
+    sha256 "54635dc055389e6e81dad76ffa2beacfdd7e2f5f454260e338250c92611359c5"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/ramem/releases/download/v0.1.9/ramem-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "10ed2de9ad7a113aba37e835cab873596fdb36975bf9f24142b5fe5c55aa2993"
+      url "https://github.com/planetf1/ramem/releases/download/v0.1.10/ramem-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a359e0d84eaa8b6b0bc6e209620a131dce654ed400f26af0157912cf6be0a90d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/ramem/releases/download/v0.1.9/ramem-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a481f651a94ad87619de32840d49c293e05d3dbbce88a9ff6360ba82345141dd"
+      url "https://github.com/planetf1/ramem/releases/download/v0.1.10/ramem-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "42d3b4abce02f2491f0118ae421b57a783f96e0878dc823111d61486b192fdc8"
     end
   end
   license "Apache-2.0"
