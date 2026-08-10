@@ -1,25 +1,25 @@
 class Otelite < Formula
   desc "Otelite: OTLP receiver, dashboard, and CLI for local OpenTelemetry observability"
   homepage "https://github.com/planetf1/otelite"
-  version "0.1.52"
+  version "0.1.53"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.52/otelite-aarch64-apple-darwin.tar.xz"
-      sha256 "f9708295cffb78d2f91346d43258c38429714b2e573266d5cca6fa33cbbecbc0"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.53/otelite-aarch64-apple-darwin.tar.xz"
+      sha256 "427b49b888371888cf29eabd5fa41d2635bc6ee01695ea60d4ecfa9c7ccbdba3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.52/otelite-x86_64-apple-darwin.tar.xz"
-      sha256 "835f1399db5b360f9e9a740f56fd1cf3558e8b1f28371e4651079a62b525f7ef"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.53/otelite-x86_64-apple-darwin.tar.xz"
+      sha256 "567be99c1c929aa43c6457e1643bf884859ff5eedbbff678cdab53bd02937dc4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.52/otelite-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ad26d70bc83593a2c5794cba429ebaa4258ce2ccb015bf2daf025b161e0d7be0"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.53/otelite-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e98dd1411fac0238d92f0e2e3d22aa183f83095f252d6351badb9fbdd819a3db"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.52/otelite-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "56bea71dd061ce3a895a57a2a75c76ab2516e44c7d0543d99ab636dbd324cef0"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.53/otelite-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6870bd4838645532f045aa2c111479c89f60a42f011891a75fae8b530753ccf6"
     end
   end
   license "Apache-2.0"
@@ -47,10 +47,18 @@ class Otelite < Formula
   end
 
   def install
-    bin.install "otelite" if OS.mac? && Hardware::CPU.arm?
-    bin.install "otelite" if OS.mac? && Hardware::CPU.intel?
-    bin.install "otelite" if OS.linux? && Hardware::CPU.arm?
-    bin.install "otelite" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "otelite"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "otelite"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "otelite"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "otelite"
+    end
 
     install_binary_aliases!
 
