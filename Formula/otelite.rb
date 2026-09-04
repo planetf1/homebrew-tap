@@ -1,25 +1,25 @@
 class Otelite < Formula
   desc "Otelite: OTLP receiver, dashboard, and CLI for local OpenTelemetry observability"
   homepage "https://github.com/planetf1/otelite"
-  version "0.1.110"
+  version "0.1.116"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.110/otelite-aarch64-apple-darwin.tar.xz"
-      sha256 "2bd47d88a733dba8a2273b547725aefff931269827418ff30cafa9881451a0d6"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.116/otelite-aarch64-apple-darwin.tar.xz"
+      sha256 "440a8959d6878346d3c5ab0a5354835a4f6155e2af45e0c25c994ae95ee2e274"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.110/otelite-x86_64-apple-darwin.tar.xz"
-      sha256 "8feb67a463aa662062a5e0087e38aea85499595c9b7c0f907a0b13b04a77a491"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.116/otelite-x86_64-apple-darwin.tar.xz"
+      sha256 "fb2db33eb20df6d323dda8350005c11c542d7949d22f034d58a2bd09e3193100"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.110/otelite-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3488bc8ed90b5cbbb2b3b54730b59e0a49388d7397a229bdd21a32399ea7a67c"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.116/otelite-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "bfb0dd799ba3d4aad3d63428b1a0c71347f231913d1db30c61cf627c8385ac13"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.110/otelite-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3b20e529083bb1f4f54368cd7ef243d30ea8f2e461c8ad75b0a8891bf4a5b981"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.116/otelite-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b88530d2cab93bc5661e33f2d65b68cedab4d8e6695e20f04529bc32f97e5dcc"
     end
   end
   license "Apache-2.0"
@@ -69,5 +69,11 @@ class Otelite < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
+  end
+  service do
+    run [opt_bin/"otelite", "serve"]
+    keep_alive true
+    log_path var/"log/otelite.log"
+    error_log_path var/"log/otelite.log"
   end
 end
