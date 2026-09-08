@@ -1,25 +1,25 @@
 class Otelite < Formula
   desc "Otelite: OTLP receiver, dashboard, and CLI for local OpenTelemetry observability"
   homepage "https://github.com/planetf1/otelite"
-  version "0.1.124"
+  version "0.1.125"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.124/otelite-aarch64-apple-darwin.tar.xz"
-      sha256 "f06a0ffc9bd57c0f1da94b93304eeeb3486eaafa1cc71275db9b0c11be257179"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.125/otelite-aarch64-apple-darwin.tar.xz"
+      sha256 "415c8578b99e7edb5be9ae7b8a24856e1b57c42209de2ef000483de3ba413619"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.124/otelite-x86_64-apple-darwin.tar.xz"
-      sha256 "507c12edc9e124a3710c7017305bca96370de05a317221f1c41be7b92cf24705"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.125/otelite-x86_64-apple-darwin.tar.xz"
+      sha256 "3762bfe9be7202775aecd914bb3b182d4eb60ea4e4c7643ed25baccdbd27aced"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.124/otelite-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "15a13f10e54593c9afa744d1b61d25a80455bbb58aad58ed4f7cccf40ff94777"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.125/otelite-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a807b19a885640bdaaac96a4ef510c732ed598d5e67acc1688d52b993ed1d35f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/otelite/releases/download/v0.1.124/otelite-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a013a2b52f8a37eb335b55cb3324241eb186118c5253a264f190f2b9f03867c4"
+      url "https://github.com/planetf1/otelite/releases/download/v0.1.125/otelite-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "80066194f25344d53c269d0ecd3bcd47c7089da18dcc71b41ec06d2510611659"
     end
   end
   license "Apache-2.0"
