@@ -1,25 +1,25 @@
 class Sks3200 < Formula
   desc "CLI + TUI manager for XikeStor SKS3200-8E2X switches"
   homepage "https://github.com/planetf1/sks32kmon"
-  version "0.1.7"
+  version "0.1.9"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.7/sks3200-aarch64-apple-darwin.tar.xz"
-      sha256 "b6c061b0a5e67395830cd9c44d0c6774f1ad654aa0d52a2d5647ed301c408cf9"
+      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.9/sks3200-aarch64-apple-darwin.tar.xz"
+      sha256 "7d01fbadda4055f1bd24ee146a704a99a5f46f8fcf1af5a751330ea8cc0f67f0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.7/sks3200-x86_64-apple-darwin.tar.xz"
-      sha256 "d5b60b2e169dd06805631891815dad3265b213e176e35ef755e57ef585c092b3"
+      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.9/sks3200-x86_64-apple-darwin.tar.xz"
+      sha256 "921401a721d5e617053a6ab512bd88d3be861ca4597133c5a8245f31be860282"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.7/sks3200-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f5e287be025d3aab8057c860b76891ed7bc53f24f787930fe7ec7c8aa0efc539"
+      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.9/sks3200-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "bc43c738b0e82eb31c482cb44a3d393172c4bc8d23d8cabb3adaee0d53faa4a0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.7/sks3200-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6abf38c30f31e7564c7d03df0397dd0531f866f04879e04c78e99fab2313e39b"
+      url "https://github.com/planetf1/sks32kmon/releases/download/v0.1.9/sks3200-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "21398b4cd58c76fbd652cfb5c9c4640a55caf60475a8d0f18531beb63c6aac62"
     end
   end
   license "Apache-2.0"
@@ -47,10 +47,18 @@ class Sks3200 < Formula
   end
 
   def install
-    bin.install "sks3200" if OS.mac? && Hardware::CPU.arm?
-    bin.install "sks3200" if OS.mac? && Hardware::CPU.intel?
-    bin.install "sks3200" if OS.linux? && Hardware::CPU.arm?
-    bin.install "sks3200" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "sks3200"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "sks3200"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "sks3200"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "sks3200"
+    end
 
     install_binary_aliases!
 
