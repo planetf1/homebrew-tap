@@ -1,25 +1,25 @@
 class Oxllm < Formula
   desc "Minimalist adaptive routing LLM proxy in Rust"
   homepage "https://github.com/planetf1/oxllm"
-  version "0.1.30"
+  version "0.1.31"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/oxllm/releases/download/v0.1.30/oxllm-aarch64-apple-darwin.tar.xz"
-      sha256 "e0527b579216b50e78d01e27ba9e52d54441f424094c2508be9e693bc68e3c64"
+      url "https://github.com/planetf1/oxllm/releases/download/v0.1.31/oxllm-aarch64-apple-darwin.tar.xz"
+      sha256 "ac726e424a21d0b6f5360c781a0d6267cdc8574cd7fde42be7cfa3ce9bba7568"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/oxllm/releases/download/v0.1.30/oxllm-x86_64-apple-darwin.tar.xz"
-      sha256 "f695fc584d440ee7c2d4cacd0ff84d37429b8ea2dbc967e04315d77b4cf9aaa5"
+      url "https://github.com/planetf1/oxllm/releases/download/v0.1.31/oxllm-x86_64-apple-darwin.tar.xz"
+      sha256 "c635be312efff8abedd32fa445209539a80c5002d3034475d695713b10c6405d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/planetf1/oxllm/releases/download/v0.1.30/oxllm-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f1095337659d343d38fb108fc0019b9a63d2015f216bad9102d35949251c1298"
+      url "https://github.com/planetf1/oxllm/releases/download/v0.1.31/oxllm-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c440f3b103a863e1c989a53a24935bbebb2df0d6e5db13bdafb6d97dd9a82ae3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetf1/oxllm/releases/download/v0.1.30/oxllm-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0a0a94b1fd1e07fa911684f026799c09388eefb5f7502565992b92773a5e6375"
+      url "https://github.com/planetf1/oxllm/releases/download/v0.1.31/oxllm-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "5888a83e9913c2c43e36be4e6a421e3c32a6de934d7d91865ffd6339e8953991"
     end
   end
   license "Apache-2.0"
